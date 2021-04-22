@@ -2,7 +2,7 @@
 layout: page
 title: About Kraitba
 permalink: /about
-comments: true
+comments: false
 ---
 
 ## About Kraitba 
