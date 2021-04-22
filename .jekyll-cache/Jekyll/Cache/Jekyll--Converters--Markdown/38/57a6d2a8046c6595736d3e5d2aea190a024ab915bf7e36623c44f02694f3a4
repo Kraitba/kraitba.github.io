@@ -1,0 +1,43 @@
+I"
+<p>Let’s setup <strong>Google cloud sdk</strong> in order to gain access to <strong>Google cloudshell</strong> via termux ssh.</p>
+
+<p>Among all the cloudshells available in market. I personally love google <strong>cloudshell</strong> most. There’s numbers of reason behind it like it offers better specifications and freely available.</p>
+
+<p>We need <strong>python 2.7</strong> for sure in termux because Cloud SDK requires Python; supported versions are Python 3 (preferred, 3.5 to 3.8) and Python 2 (2.7.9 or higher).
+Preferred versions 3.5 to 3.8 is not available in termux. The latest python3 version available is python 3.9 which is not supported by cloud sdk. So we will go for python 2.7</p>
+
+<p>Now just execute following scripts. It will take upto 500 MB space and Internet data for sure. So make sure you have stable Internet connection.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre>pkg <span class="nb">install </span>python2 openssh <span class="nt">-y</span> 
+
+<span class="nb">export </span><span class="nv">CLOUDSDK_PYTHON</span><span class="o">=</span><span class="s1">'python2.7'</span>
+<span class="nb">echo</span> <span class="s2">"export CLOUDSDK_PYTHON='python2.7'"</span> <span class="o">&gt;&gt;</span> ~/.bashrc
+<span class="nb">echo</span> <span class="s2">"export PATH=</span><span class="nv">$PATH</span><span class="s2">:</span><span class="nv">$PREFIX</span><span class="s2">/google-cloud-sdk/bin"</span>
+curl <span class="nt">-o</span> sdk.sh sdk.cloud.google.com
+<span class="nb">chmod</span> +x sdk.sh
+./sdk.sh <span class="nt">--install-dir</span><span class="o">=</span><span class="nv">$PREFIX</span>
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>Now it will ask few questions, just attend it and go forward. Reload your shell to ensure that all commands is in your <strong>PATH</strong>.</p>
+
+<p>If everything is right for now then you are just a mile away from your goal. Authentic yourself now.</p>
+
+<p><code class="language-plaintext highlighter-rouge">gcloud auth login</code></p>
+
+<p>Above command will output a link. Copy that link and paste it into your browser and then choose google account/email id and now  done.</p>
+
+<p>Access your Google cloudshell via following command. 
+<code class="language-plaintext highlighter-rouge">gcloud alpha cloud-shell ssh</code></p>
+
+<p>Best of luck 👍</p>
+
+:ET
