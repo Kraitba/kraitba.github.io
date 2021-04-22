@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "How to access Google cloudshell via termux and ssh"
+title:  "How to access Google cloud shell via Termux and ssh"
 description: "Install google cloud sdk in termux to access google cloudshell via termux or to be precisely ssh"
 categories: [ google, cloudshell, termux ]
 featured: true
